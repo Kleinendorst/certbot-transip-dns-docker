@@ -3,22 +3,6 @@ FROM python:3-alpine
 ENTRYPOINT /scripts/entrypoint.sh
 WORKDIR /scripts
 
-# --- MANDATORY ENVIRONMENT VARIABLES -----------------------------------------------------------------
-# The user should set these environment variables,
-# This block only exists for documentation purposes.
-
-# |-------------------|---------------------------------------|-------------------------------------|
-# |	ENV								| DESCRIPTION														| EXAMPLE															|
-# |-------------------|---------------------------------------|-------------------------------------|
-# | TRANSIP_USERNAME	|	username of TransIP account						|	kleinendorst21											|
-# |-------------------|---------------------------------------|-------------------------------------|
-# | CERTBOT_EMAIL			| email passed to certbot. Used for   	|	thomas.kleinendorst@outlook.com			|
-# |										| urgent renewal and security notices.	|																			|
-# |-------------------|---------------------------------------|-------------------------------------|
-# | DOMAIN						| domain to obtain certificates for,		| kleinendorst.info										|
-#	|										| should not contain sub-domains					| 																		|
-# |-------------------|---------------------------------------|-------------------------------------|
-
 # --- ENVIRONMENT VARIABLES ---------------------------------------------------------------------------
 # Mount point where the TransIP API key should reside
 ENV TRANSIP_KEY_LOCATION=/transip
