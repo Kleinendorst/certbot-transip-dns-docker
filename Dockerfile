@@ -16,7 +16,7 @@ WORKDIR /scripts
 # |										| urgent renewal and security notices.	|																			|
 # |-------------------|---------------------------------------|-------------------------------------|
 # | DOMAIN						| domain to obtain certificates for,		| kleinendorst.info										|
-#	|										| should not contain subdomains					| 																		|
+#	|										| should not contain sub-domains					| 																		|
 # |-------------------|---------------------------------------|-------------------------------------|
 
 # --- ENVIRONMENT VARIABLES ---------------------------------------------------------------------------
@@ -27,7 +27,7 @@ ENV TRANSIP_KEY_LOCATION=/transip
 ENV TRANSIP_KEY_FILE_NAME=transip.key
 
 # Delay between placing the DNS record, and the
-# actual challange being performed in seconds.
+# actual challenge being performed in seconds.
 ENV PROPAGATION_SECONDS=240
 
 # --- VOLUMES -----------------------------------------------------------------------------------------
@@ -37,7 +37,7 @@ ENV PROPAGATION_SECONDS=240
 VOLUME /etc/letsencrypt
 
 # --- CONTAINER BUILD ---------------------------------------------------------------------------------
-# Tools needed to install the Python cryptography package (a dependancy of certbot).
+# Tools needed to install the Python cryptography package (a dependency of certbot).
 # per official installation instructions at:
 # https://github.com/pyca/cryptography/blob/master/docs/installation.rst
 RUN apk add gcc musl-dev python3-dev libffi-dev openssl-dev

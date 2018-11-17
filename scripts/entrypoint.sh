@@ -24,7 +24,7 @@ echo "certbot_dns_transip:dns_transip_key_file = $TRANSIP_KEY_FILE" >> $TRANSIP_
 # Disable the permission error on key and ini file
 chmod 600 $TRANSIP_INI_FILE $TRANSIP_KEY_FILE
 
-echo "running the certbot challange for $DOMAIN"
+echo "running the certbot challenge for $DOMAIN"
 certbot certonly -d $DOMAIN -a certbot-dns-transip:dns-transip \
 				--certbot-dns-transip:dns-transip-credentials $TRANSIP_INI_FILE \
 				--email $CERTBOT_EMAIL \
