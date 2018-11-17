@@ -55,7 +55,9 @@ docker run --rm \
 ## Environment variable overview
 1. **TRANSIP_USERNAME**: Username of TransIP account.
 2. **CERTBOT_EMAIL**: Email passed to certbot. Used for urgent renewal and security notices.
-3. **DOMAIN**: Domain to obtain certificates for should not contain sub-domains.
+3. **DOMAIN**: Domain to obtain certificates for should not contain sub-domains. Notice that the
+							 created certificate will be valid for the main domain (`example.com`) and a wildcard for
+							 a single sub-domain (`*.example.com`).
 
 ## Known issues
 * There is an issue, on Windows only, where the certificate cannot be dumped in a mounted directory.
