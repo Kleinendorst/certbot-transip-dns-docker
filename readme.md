@@ -61,4 +61,3 @@ docker run --rm \
 * There is an issue, on Windows only, where the certificate cannot be dumped in a mounted directory.
 	The error reads: `OSError: [Errno 71] Protocol error`. This error seams to be caused by mounting
 	issues in Docker. Linux hosts should not be affected.
-  
