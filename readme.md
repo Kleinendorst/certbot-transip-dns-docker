@@ -1,10 +1,15 @@
-# Cerbot TransIp challange
-This project provides the excelent [cerbot-dns-transip](https://github.com/hsmade/certbot-dns-transip)
+# Cerbot TransIP challenge
+This project provides the excellent [cerbot-dns-transip](https://github.com/hsmade/certbot-dns-transip)
 plugin wrapped in a Docker container.
 
-## Running the container
-Use the following command:
+## Quickstart
+Use the following command to generate a new certificate, or (attempt) renewal for existing certificates.
 
 ```bash
-docker run -ti --rm -v "/c/Users/thomas/Desktop/certificate files/certs:/certs" -v "/c/Users/thomas/Desktop/certificate files/scripts:/scripts" alpine:3.8 /bin/ash
+docker run --rm \
+				-e TRANSIP_USERNAME={{ USERNAME }} \
+				-e DOMAIN={{ DOMAIN }} \
+				-e CERTBOT_EMAIL={{ EMAIL }} \
+				-v "{{ PATH_TO_API_KEY }}:/transip" \
+				-v "{{ CERTIFICATE_PATH }}:/etc/letsencrypt" transip-certbot
 ```
