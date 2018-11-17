@@ -15,3 +15,9 @@ for MANDATORY_ENV in $MANDATORY_VARIABLES; do
 	  exit 1
 	fi
 done
+
+# Check whether the key file exists
+if [[ ! -f $TRANSIP_KEY_LOCATION/$TRANSIP_KEY_FILE_NAME ]]; then
+    echo "ERROR: the key file does not exist"
+    exit 1
+fi
