@@ -20,12 +20,14 @@ WORKDIR /scripts
 # |-------------------|---------------------------------------|-------------------------------------|
 
 # --- ENVIRONMENT VARIABLES ---------------------------------------------------------------------------
-ENV CERT_LOCATION=/certs
+# Mount point where the TransIP API key should reside
 ENV TRANSIP_KEY_LOCATION=/transip
 
+# Name of the TransIP API key
 ENV TRANSIP_KEY_FILE_NAME=transip.key
 
-# Environment variables below this point are not meant to be changed by the user.
+# Delay between placing the DNS record, and the
+# actual challange being performed in seconds.
 ENV PROPAGATION_SECONDS=240
 
 # --- VOLUMES -----------------------------------------------------------------------------------------
