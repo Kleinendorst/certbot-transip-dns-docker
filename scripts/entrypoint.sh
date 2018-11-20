@@ -11,11 +11,9 @@ WORK_DIR="/work-dir"
 TRANSIP_INI_FILE=$WORK_DIR/transip.ini
 TRANSIP_KEY_FILE=$WORK_DIR/transip-rsa.key
 
-echo "copying the TransIP API key to the working directory"
+echo "Converting TransIP API key to RSA key"
 mkdir -p $WORK_DIR
 openssl rsa -in $TRANSIP_KEY_LOCATION/$TRANSIP_KEY_FILE_NAME -out $TRANSIP_KEY_FILE
-
-# cp $TRANSIP_KEY_LOCATION/$TRANSIP_KEY_FILE_NAME $WORK_DIR
 
 echo "create the transip.ini file used by the certbot-dns-transip plugin"
 echo "certbot_dns_transip:dns_transip_username = $TRANSIP_USERNAME" > $TRANSIP_INI_FILE
